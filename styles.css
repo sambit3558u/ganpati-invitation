@@ -1,0 +1,331 @@
+/* Base styles */
+body {
+    background-color: #f4f4f9;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border: 2px solid #d4af37; /* Gold border for elegance */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('path-to-decorative-background-image.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.1; 
+    z-index: -1;
+}
+
+.header {
+    text-align: center;
+    background-color: #d4af37; 
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: relative; 
+}
+
+.header img {
+    width: 250px; 
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid #fff; 
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 175, 55, 0.7); 
+    position: relative; 
+    z-index: 1;
+    object-fit: cover; 
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 240px; 
+    height: 240px; 
+    background: rgba(212, 175, 55, 0.3); 
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.7); 
+    transform: translate(-50%, -50%);
+    z-index: 0; 
+}
+
+.header h1 {
+    font-family: 'Great Vibes', cursive;
+    color: #fff;
+    margin: 10px 0;
+    font-size: 2.5em;
+}
+
+.invitation {
+    padding: 20px;
+    text-align: center;
+}
+
+.invitation h2 {
+    font-family: 'Great Vibes', cursive;
+    color: #d4af37;
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.invitation h1 {
+    font-size: 2em;
+    color: #555;
+    margin: 10px 0;
+}
+
+.invitation p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.program-schedule, .special-attractions, .Venue, .family-members {
+    padding: 20px;
+    border-top: 2px solid #d4af37;
+    margin-top: 20px;
+}
+
+.program-schedule h2, .special-attractions h2, .Venue h2, .family-members h2 {
+    font-family: 'Great Vibes', cursive;
+    color: #d4af37;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.program-schedule ul, .special-attractions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.program-schedule li, .special-attractions li {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.Venue p {
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+}
+/* .rsvp p {
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+} */
+
+.footer {
+    background-color: #d4af37;
+    padding: 15px;
+    border-top: 2px solid #fff;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.family-members {
+    padding: 20px 0;
+    background-color: #f9f9f9; 
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.family-members h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.family-members .scrolling-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.family-members .scrolling-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.family-members .scrolling-content {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.family-members .member {
+    width: 180px; 
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 15px; 
+    border: 3px solid #d4af37;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), 0 0 12px rgba(212, 175, 55, 0.7); 
+}
+
+.family-members .member img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+
+@media (max-width: 768px) {
+    .header img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .invitation h2 {
+        font-size: 1.2em;
+    }
+
+    .invitation h1 {
+        font-size: 1.5em;
+    }
+
+    .invitation p {
+        font-size: 1em;
+    }
+
+    .program-schedule li, .special-attractions li {
+        font-size: 1em;
+    }
+
+    .footer p {
+        font-size: 1em;
+    }
+
+    .family-members .member {
+        width: 120px;
+        height: 120px;
+    }
+
+    .family-members .scrolling-content {
+        animation: scroll 15s linear infinite;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .header img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .invitation h2 {
+        font-size: 1em;
+    }
+
+    .invitation h1 {
+        font-size: 1.2em;
+    }
+
+    .invitation p {
+        font-size: 0.9em;
+    }
+
+    .program-schedule li, .special-attractions li {
+        font-size: 0.9em;
+    }
+
+    .footer p {
+        font-size: 0.9em;
+    }
+
+    .family-members .member {
+        width: 100px;
+        height: 100px;
+    }
+
+    .family-members .scrolling-content {
+        animation: scroll 10s linear infinite;
+    }
+}
+/* .container {
+    animation: transitionIn 0.75s;
+    animation-duration: 2s;
+}
+@keyframes transitionIn{
+    from{
+        opacity: 0;
+        transform:rotate(-180deg) ;
+    }
+    to{
+        opacity: 1;
+        transform: rotate(0);   
+    }
+} */
+.container {
+    /* opacity: 0; */
+    animation: fedeln 4s;
+    animation-duration: 4s;
+}
+@keyframes fedeln{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.family-members .footer {
+    /* opacity: 0; */
+    animation: fedeln 4s;
+    animation-duration: 4s;
+}
+@keyframes fedeln{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
